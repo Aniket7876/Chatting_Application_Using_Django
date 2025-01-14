@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="users-list">
+        <h2>Users</h2>
+        <div class="users-menu">
+            {% for user in users %}
+                <div class="user-item">
+                    <a href="{% url 'chat:room' user.id %}">{{ user.username }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="welcome-message">
+        <h1>Welcome to the Chat App</h1>
+        <p>Select a user from the list to start chatting</p>
+    </div>
+</div>
+{% endblock %}
